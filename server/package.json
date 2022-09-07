@@ -4,9 +4,11 @@
   "description": "workout-app-simple",
   "main": "index.js",
   "scripts": {
-    "start": "node app.js",
-    "serve": "nodemon --legacy-watch app.js"
+    "start": "node index.js",
+    "serve": "nodemon --legacy-watch index.js",
+    "serve2": "nodemon index.js"
   },
+  "type": "module",
   "author": "VA",
   "license": "ISC",
   "dependencies": {
