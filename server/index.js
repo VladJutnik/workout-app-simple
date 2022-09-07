@@ -3,6 +3,9 @@ import morgan from 'morgan'
 import dotenv from 'dotenv'
 import colors from 'colors'
 
+/*DB*/
+import { connectDB } from "./db/db.js";
+
 /*Routes*/
 import userRoutes from "./routes/userRoutes.js";
 
@@ -19,8 +22,9 @@ app.use('/api/users', userRoutes)
 
 const PORT = process.env.PORT || 5000
 
-function start() {
+async function start() {
     try {
+        await connectDB()
         app.listen(
             PORT,
             console.log.bind(console, `Server has been started on port - ${PORT}`.yellow.bold)

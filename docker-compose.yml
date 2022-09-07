@@ -1,5 +1,13 @@
 version: "3.8"
 services:
+  mongo:
+    image: "mongo"
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-workout:/data/db
+    env_file:
+      - ./server/dev.env
   backend:
     build:
       context: ./server
@@ -9,5 +17,9 @@ services:
     volumes:
       - ./server/:/app
       - /app/node_modules
+    depends_on:
+      - mongo
     env_file:
       - ./server/dev.env
+volumes:
+  mongo-workout:
