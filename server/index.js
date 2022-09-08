@@ -11,6 +11,7 @@ import {errorHandler, notFound} from "./middleware/errorMiddleware.js";
 /*Routes*/
 import userRoutes from "./routes/userRoutes.js";
 import exerciseRoutes from "./routes/exerciseRoutes.js";
+import workoutRoutes from "./routes/workoutRoutes.js";
 
 dotenv.config()
 
@@ -24,6 +25,7 @@ app.use(express.json({extended: true}))
 
 app.use('/api/users', userRoutes)
 app.use('/api/exercises', exerciseRoutes)
+app.use('/api/workout', workoutRoutes)
 app.use(errorHandler)
 app.use(notFound)
 const PORT = process.env.PORT || 5000
