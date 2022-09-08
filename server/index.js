@@ -25,7 +25,7 @@ app.use(express.json({extended: true}))
 
 app.use('/api/users', userRoutes)
 app.use('/api/exercises', exerciseRoutes)
-app.use('/api/workout', workoutRoutes)
+app.use('/api/workouts', workoutRoutes)
 app.use(errorHandler)
 app.use(notFound)
 const PORT = process.env.PORT || 5000
